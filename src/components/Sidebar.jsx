@@ -84,7 +84,7 @@ const Sidebar = () => {
           src={userProfile ? userProfile : '/img/tim-cook.jpg'}
         >
           <AvatarBadge bg="brand.blue" boxSize="1em">
-            <AiFillCamera size="0.4em" />
+            <AiFillCamera color="white" size="0.4em" />
           </AvatarBadge>
         </Avatar>
         <input
