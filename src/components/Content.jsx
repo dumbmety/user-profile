@@ -5,6 +5,13 @@ import {
   FormLabel,
   Grid,
   Input,
+  InputGroup,
+  InputLeftAddon,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
   Select,
   Switch,
   Tab,
@@ -136,7 +143,47 @@ const Content = () => {
               </FormControl>
             </Grid>
           </TabPanel>
-          <TabPanel></TabPanel>
+          <TabPanel>
+            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+              <FormControl id="companyId">
+                <FormLabel>Company ID</FormLabel>
+                <InputGroup>
+                  <InputLeftAddon>@</InputLeftAddon>
+                  <Input
+                    focusBorderColor="brand.blue"
+                    type="text"
+                    placeholder="apple"
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl id="companyName">
+                <FormLabel>Name</FormLabel>
+                <Input
+                  focusBorderColor="brand.blue"
+                  type="text"
+                  placeholder="Apple"
+                />
+              </FormControl>
+              <FormControl id="emailCompany">
+                <FormLabel>Email Address</FormLabel>
+                <Input
+                  focusBorderColor="brand.blue"
+                  type="email"
+                  placeholder="info@apple.com"
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Size</FormLabel>
+                <NumberInput>
+                  <NumberInputField placeholder="6000" />
+                  <NumberInputStepper>
+                    <NumberIncrementStepper />
+                    <NumberDecrementStepper />
+                  </NumberInputStepper>
+                </NumberInput>
+              </FormControl>
+            </Grid>
+          </TabPanel>
           <TabPanel>
             <FormControl
               display="flex"
