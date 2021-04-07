@@ -5,12 +5,8 @@ import {
   FormLabel,
   Grid,
   Input,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
   Select,
+  Switch,
   Tab,
   TabList,
   TabPanel,
@@ -23,6 +19,9 @@ const Content = () => {
     <Box
       as="main"
       flex="3"
+      d="flex"
+      flexDir="column"
+      justifyContent="space-between"
       pt="5"
       bg="white"
       rounded="md"
@@ -122,29 +121,6 @@ const Content = () => {
                   <option value="poland">Poland</option>
                 </Select>
               </FormControl>
-              <FormControl id="state">
-                <FormLabel>State/Country</FormLabel>
-                <Select
-                  focusBorderColor="brand.blue"
-                  placeholder="Select state/country"
-                >
-                  <option value="canada">Canada</option>
-                  <option value="dc" selected>
-                    DC
-                  </option>
-                  <option value="germany">Germany</option>
-                </Select>
-              </FormControl>
-              <FormControl id="postcode">
-                <FormLabel>Postcode</FormLabel>
-                <NumberInput>
-                  <NumberInputField placeholder="31005" />
-                  <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                  </NumberInputStepper>
-                </NumberInput>
-              </FormControl>
               <FormControl id="country">
                 <FormLabel>Country</FormLabel>
                 <Select
@@ -159,6 +135,24 @@ const Content = () => {
                 </Select>
               </FormControl>
             </Grid>
+          </TabPanel>
+          <TabPanel></TabPanel>
+          <TabPanel>
+            <FormControl
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <FormLabel
+                htmlFor="notificationEmails"
+                mb="0"
+                cursor="pointer"
+                userSelect="none"
+              >
+                Receive notification emails
+              </FormLabel>
+              <Switch id="notificationEmails" />
+            </FormControl>
           </TabPanel>
         </TabPanels>
       </Tabs>
