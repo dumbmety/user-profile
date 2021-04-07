@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 
 const Main = () => {
   return (
-    <Container d="flex" maxW="container.lg">
+    <Container d="flex" maxW="container.xl">
       <Sidebar />
       <Content />
     </Container>
