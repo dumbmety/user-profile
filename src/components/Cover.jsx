@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/layout';
 
 const Cover = () => {
   return (
-    <Box bg="red" h="60" overflow="hidden">
+    <Box h="60" overflow="hidden">
       <Image
         w="full"
         h="full"
