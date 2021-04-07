@@ -81,7 +81,10 @@ const Content = () => {
 
         <TabPanels px="3" mt="5">
           <TabPanel>
-            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+            <Grid
+              templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+              gap={6}
+            >
               <FormControl id="firstName">
                 <FormLabel>First Name</FormLabel>
                 <Input
@@ -144,7 +147,10 @@ const Content = () => {
             </Grid>
           </TabPanel>
           <TabPanel>
-            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+            <Grid
+              templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+              gap={6}
+            >
               <FormControl id="companyId">
                 <FormLabel>Company ID</FormLabel>
                 <InputGroup>
