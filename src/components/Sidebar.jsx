@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { AiFillCamera, AiFillCopy } from 'react-icons/ai';
 import {
   Avatar,
@@ -9,10 +10,23 @@ import {
   InputGroup,
   InputRightAddon,
   Text,
+  useClipboard,
   VStack,
 } from '@chakra-ui/react';
 
 const Sidebar = () => {
+  const value = 'https://domain.com/user';
+  const { hasCopied, onCopy } = useClipboard(value);
+
+  const profileUrl = useRef(null);
+
+  useEffect(() => {
+    if (hasCopied) {
+      profileUrl.current.focus();
+      profileUrl.current.select();
+    }
+  });
+
   return (
     <Box
       as="aside"
@@ -110,15 +124,17 @@ const Sidebar = () => {
         </Button>
         <InputGroup>
           <Input
+            ref={profileUrl}
             type="url"
             color="brand.blue"
-            value="https://domain.com/user"
+            value={value}
             userSelect="all"
             isReadOnly
             _focus={{ borderColor: 'brand.blue' }}
           />
           <InputRightAddon bg="transparent" px="0" overflow="hidden">
             <Button
+              onClick={onCopy}
               p="0"
               bg="transparent"
               rounded="none"
