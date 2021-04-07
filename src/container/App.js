@@ -1,8 +1,5 @@
-import React from 'react';
 import SimpleBar from 'simplebar-react';
 import { ChakraProvider } from '@chakra-ui/react';
-
-import 'simplebar/dist/simplebar.min.css';
 
 const App = () => {
   return (

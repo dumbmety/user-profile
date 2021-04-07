@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
+import { render } from 'react-dom';
 import App from './container/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+import 'simplebar/dist/simplebar.min.css';
+
+render(<App />, document.getElementById('app'));
