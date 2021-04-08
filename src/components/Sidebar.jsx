@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { AiFillCamera, AiFillCopy } from 'react-icons/ai';
 import {
   Avatar,
   AvatarBadge,
@@ -84,7 +83,18 @@ const Sidebar = () => {
           src={userProfile ? userProfile : '/img/tim-cook.jpg'}
         >
           <AvatarBadge bg="brand.blue" boxSize="1em">
-            <AiFillCamera color="white" size="0.4em" />
+            <svg
+              width="0.4em"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                clipRule="evenodd"
+              />
+            </svg>
           </AvatarBadge>
         </Avatar>
         <input
@@ -210,12 +220,21 @@ const Sidebar = () => {
             <Button
               onClick={onCopy}
               p="0"
+              color="gray.500"
               bg="transparent"
               rounded="none"
               _active={{ bg: 'brand.light' }}
               _focus={{ boxShadow: 'none' }}
             >
-              <AiFillCopy color="#77889a" />
+              <svg
+                width="1.2em"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+              </svg>
             </Button>
           </InputRightAddon>
         </InputGroup>
