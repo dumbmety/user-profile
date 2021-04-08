@@ -61,7 +61,7 @@ const Sidebar = () => {
     <Box
       as="aside"
       flex="1"
-      mr="5"
+      mr={{ base: '0', md: '5' }}
       mb={{ base: '5', md: '0' }}
       bg="white"
       rounded="md"
