@@ -9,6 +9,7 @@
 - [x] Added company settings
 - [x] Added notifications
 - [x] Responsive Design
+- [x] Custom scrollbar
 
 ## Technologies
 - [React](https://reactjs.org)
