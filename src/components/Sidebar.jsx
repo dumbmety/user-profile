@@ -121,16 +121,7 @@ const Sidebar = () => {
             </ModalBody>
 
             <ModalFooter>
-              <Button
-                onClick={onClose}
-                color="white"
-                bg="brand.blue"
-                _hover={{ bg: 'brand.blue' }}
-                _active={{ bg: 'brand.blue' }}
-                _focus={{ boxShadow: 'none' }}
-              >
-                Close
-              </Button>
+              <Button onClick={onClose}>Close</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
@@ -194,16 +185,7 @@ const Sidebar = () => {
         </Box>
       </VStack>
       <VStack py="8" px="5" spacing="3">
-        <Button
-          w="full"
-          color="brand.cadet"
-          bg="transparent"
-          borderWidth="1px"
-          borderColor="brand.light"
-          _hover={{ bg: 'brand.white' }}
-          _active={{ bg: 'brand.light' }}
-          _focus={{ boxShadow: 'none' }}
-        >
+        <Button w="full" variant="outline">
           View Public Profile
         </Button>
         <InputGroup>
@@ -217,15 +199,7 @@ const Sidebar = () => {
             _focus={{ borderColor: 'brand.blue' }}
           />
           <InputRightAddon bg="transparent" px="0" overflow="hidden">
-            <Button
-              onClick={onCopy}
-              p="0"
-              color="gray.500"
-              bg="transparent"
-              rounded="none"
-              _active={{ bg: 'brand.light' }}
-              _focus={{ boxShadow: 'none' }}
-            >
+            <Button onClick={onCopy} variant="link">
               <svg
                 width="1.2em"
                 fill="currentColor"

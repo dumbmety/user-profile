@@ -224,16 +224,7 @@ const Content = () => {
       </Tabs>
 
       <Box mt="5" py="5" px="8" borderTopWidth="1px" borderColor="brand.light">
-        <Button
-          p="6"
-          color="white"
-          bg="brand.blue"
-          _hover={{ bg: 'brand.blue' }}
-          _active={{ bg: 'brand.blue' }}
-          _focus={{ boxShadow: 'none' }}
-        >
-          Update
-        </Button>
+        <Button>Update</Button>
       </Box>
     </Box>
   );

@@ -53,12 +53,8 @@ const Cover = () => {
         onClick={openChooseFile}
         position="absolute"
         top="4"
-        color="white"
         right="4"
-        bg="rgba(0, 0, 0, 0.25)"
-        _hover={{ bg: 'rgba(0, 0, 0, 0.25)' }}
-        _active={{ bg: 'rgba(0, 0, 0, 0.35)' }}
-        _focus={{ boxShadow: 'none' }}
+        variant="ghost"
       >
         <svg
           width="1.2em"
@@ -93,16 +89,7 @@ const Cover = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button
-              onClick={onClose}
-              color="white"
-              bg="brand.blue"
-              _hover={{ bg: 'brand.blue' }}
-              _active={{ bg: 'brand.blue' }}
-              _focus={{ boxShadow: 'none' }}
-            >
-              Close
-            </Button>
+            <Button onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
