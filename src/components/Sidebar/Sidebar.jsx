@@ -1,76 +1,27 @@
-import { useEffect, useRef } from 'react';
-import {
-  Box,
-  Button,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  useClipboard,
-  VStack,
-} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
+import Actions from './Actions';
 import Data from './Data';
 import Profile from './Profile';
 
-const Sidebar = () => {
-  const value = 'https://domain.com/user';
-  const { hasCopied, onCopy } = useClipboard(value);
-
-  const profileUrl = useRef(null);
-
-  useEffect(() => {
-    if (hasCopied) {
-      profileUrl.current.focus();
-      profileUrl.current.select();
-    }
-  });
-
+function Sidebar() {
   return (
     <Box
       as="aside"
-      flex="1"
-      mr={{ base: '0', md: '5' }}
-      mb={{ base: '5', md: '0' }}
+      flex={1}
+      mr={{ base: 0, md: 5 }}
+      mb={{ base: 5, md: 0 }}
       bg="white"
       rounded="md"
-      borderWidth="1px"
+      borderWidth={1}
       borderColor="brand.light"
       style={{ transform: 'translateY(-100px)' }}
     >
       <Profile />
       <Data />
-
-      <VStack py="8" px="5" spacing="3">
-        <Button w="full" variant="outline">
-          View Public Profile
-        </Button>
-        <InputGroup>
-          <Input
-            ref={profileUrl}
-            type="url"
-            color="brand.blue"
-            value={value}
-            userSelect="all"
-            isReadOnly
-            _focus={{ borderColor: 'brand.blue' }}
-          />
-          <InputRightAddon bg="transparent" px="0" overflow="hidden">
-            <Button onClick={onCopy} variant="link">
-              <svg
-                width="1.2em"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-              </svg>
-            </Button>
-          </InputRightAddon>
-        </InputGroup>
-      </VStack>
+      <Actions />
     </Box>
   );
-};
+}
 
 export default Sidebar;
