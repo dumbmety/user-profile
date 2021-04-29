@@ -5,7 +5,6 @@ import {
   Button,
   HStack,
   Image,
-  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -27,7 +26,6 @@ const Cover = () => {
   };
 
   const handleChangeCover = event => {
-    debugger;
     const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg'];
     const selected = event.target.files[0];
 
@@ -41,7 +39,7 @@ const Cover = () => {
   };
 
   return (
-    <Box h="60" overflow="hidden">
+    <Box h={60} overflow="hidden">
       <Image
         w="full"
         h="full"
@@ -52,23 +50,18 @@ const Cover = () => {
       <Button
         onClick={openChooseFile}
         position="absolute"
-        top="4"
-        right="4"
+        top={4}
+        right={4}
         variant="ghost"
       >
-        <svg
-          width="1.2em"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="1.2em" fill="currentColor" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
-            d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
             clipRule="evenodd"
+            d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
           />
         </svg>
-        <Text ml="2">Change Cover</Text>
+        <Text ml={2}>Change Cover</Text>
         <input ref={inputRef} type="file" onChange={handleChangeCover} hidden />
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -78,7 +71,7 @@ const Cover = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text>File not supported!</Text>
-            <HStack mt="1">
+            <HStack mt={1}>
               <Text color="brand.cadet" fontSize="sm">
                 Supported types:
               </Text>
