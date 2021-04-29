@@ -1,37 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  Avatar,
-  AvatarBadge,
-  Badge,
   Box,
   Button,
-  Heading,
-  HStack,
   Input,
   InputGroup,
   InputRightAddon,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Text,
   useClipboard,
-  useDisclosure,
   VStack,
 } from '@chakra-ui/react';
 
-const Sidebar = () => {
-  const [userProfile, setUserProfile] = useState(null);
+import Profile from './Profile';
 
+const Sidebar = () => {
   const value = 'https://domain.com/user';
   const { hasCopied, onCopy } = useClipboard(value);
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const profileUrl = useRef(null);
-  const profileImage = useRef(null);
 
   useEffect(() => {
     if (hasCopied) {
@@ -39,23 +24,6 @@ const Sidebar = () => {
       profileUrl.current.select();
     }
   });
-
-  const openChooseImage = () => {
-    profileImage.current.click();
-  };
-
-  const changeProfileImage = event => {
-    const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg'];
-    const selected = event.target.files[0];
-
-    if (selected && ALLOWED_TYPES.includes(selected.type)) {
-      let reader = new FileReader();
-      reader.onloadend = () => setUserProfile(reader.result);
-      return reader.readAsDataURL(selected);
-    }
-
-    onOpen();
-  };
 
   return (
     <Box
@@ -69,71 +37,8 @@ const Sidebar = () => {
       borderColor="brand.light"
       style={{ transform: 'translateY(-100px)' }}
     >
-      <VStack
-        spacing="3"
-        py="5"
-        borderBottomWidth="1px"
-        borderColor="brand.light"
-      >
-        <Avatar
-          cursor="pointer"
-          onClick={openChooseImage}
-          size="2xl"
-          name="Tim Cook"
-          src={userProfile ? userProfile : '/img/tim-cook.jpg'}
-        >
-          <AvatarBadge bg="brand.blue" boxSize="1em">
-            <svg
-              width="0.4em"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </AvatarBadge>
-        </Avatar>
-        <input
-          type="file"
-          hidden
-          ref={profileImage}
-          onChange={changeProfileImage}
-        />
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Something went wrong</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text>File not supported!</Text>
-              <HStack mt="1">
-                <Text color="brand.cadet" fontSize="sm">
-                  Supported types:
-                </Text>
-                <Badge colorScheme="green">PNG</Badge>
-                <Badge colorScheme="green">JPG</Badge>
-                <Badge colorScheme="green">JPEG</Badge>
-              </HStack>
-            </ModalBody>
+      <Profile />
 
-            <ModalFooter>
-              <Button onClick={onClose}>Close</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-        <VStack spacing="1">
-          <Heading as="h3" fontSize="xl" color="brand.dark">
-            Tim Cook
-          </Heading>
-          <Text color="brand.gray" fontSize="sm">
-            CEO of Apple
-          </Text>
-        </VStack>
-      </VStack>
       <VStack as="ul" spacing="0" listStyleType="none">
         <Box
           as="li"
