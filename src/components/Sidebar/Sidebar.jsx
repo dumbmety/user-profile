@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   Box,
   Button,
   Input,
   InputGroup,
   InputRightAddon,
-  Text,
   useClipboard,
   VStack,
 } from '@chakra-ui/react';
 
+import Data from './Data';
 import Profile from './Profile';
 
 const Sidebar = () => {
@@ -38,57 +38,8 @@ const Sidebar = () => {
       style={{ transform: 'translateY(-100px)' }}
     >
       <Profile />
+      <Data />
 
-      <VStack as="ul" spacing="0" listStyleType="none">
-        <Box
-          as="li"
-          w="full"
-          py="3"
-          px="5"
-          d="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          borderBottomWidth="1px"
-          borderColor="brand.light"
-        >
-          <Text color="brand.dark">Opportunities applied</Text>
-          <Text color="brand.yellow" fontWeight="bold">
-            32
-          </Text>
-        </Box>
-        <Box
-          as="li"
-          w="full"
-          py="3"
-          px="5"
-          d="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          borderBottomWidth="1px"
-          borderColor="brand.light"
-        >
-          <Text color="brand.dark">Opportunities won</Text>
-          <Text color="brand.green" fontWeight="bold">
-            26
-          </Text>
-        </Box>
-        <Box
-          as="li"
-          w="full"
-          py="3"
-          px="5"
-          d="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          borderBottomWidth="1px"
-          borderColor="brand.light"
-        >
-          <Text color="brand.dark">Current opportunities</Text>
-          <Text color="brand.cadet" fontWeight="bold">
-            6
-          </Text>
-        </Box>
-      </VStack>
       <VStack py="8" px="5" spacing="3">
         <Button w="full" variant="outline">
           View Public Profile
