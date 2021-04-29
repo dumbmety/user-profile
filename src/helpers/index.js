@@ -53,5 +53,14 @@ export const theme = extendTheme({
         },
       },
     },
+    Tabs: {
+      baseStyle: {
+        tab: {
+          _focus: {
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
   },
 });
