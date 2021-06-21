@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from 'react'
 import {
   Badge,
   Box,
@@ -14,29 +14,29 @@ import {
   ModalOverlay,
   Text,
   useDisclosure,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
-const Cover = () => {
-  const [coverImage, setCoverImage] = useState(null);
-  const inputRef = useRef(null);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export default function Cover() {
+  const [coverImage, setCoverImage] = useState(null)
+  const inputRef = useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const openChooseFile = () => {
-    inputRef.current.click();
-  };
+    inputRef.current.click()
+  }
 
   const handleChangeCover = event => {
-    const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg'];
-    const selected = event.target.files[0];
+    const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
+    const selected = event.target.files[0]
 
     if (selected && ALLOWED_TYPES.includes(selected.type)) {
-      let reader = new FileReader();
-      reader.onloadend = () => setCoverImage(reader.result);
-      return reader.readAsDataURL(selected);
+      let reader = new FileReader()
+      reader.onloadend = () => setCoverImage(reader.result)
+      return reader.readAsDataURL(selected)
     }
 
-    onOpen();
-  };
+    onOpen()
+  }
 
   return (
     <Box h={60} overflow="hidden">
@@ -87,7 +87,5 @@ const Cover = () => {
         </ModalContent>
       </Modal>
     </Box>
-  );
-};
-
-export default Cover;
+  )
+}

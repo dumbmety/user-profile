@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from 'react'
 import {
   Avatar,
   AvatarBadge,
@@ -16,30 +16,30 @@ import {
   Text,
   useDisclosure,
   VStack,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
 function Profile() {
-  const [userProfile, setUserProfile] = useState(null);
+  const [userProfile, setUserProfile] = useState(null)
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const profileImage = useRef(null);
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const profileImage = useRef(null)
 
   const openChooseImage = () => {
-    profileImage.current.click();
-  };
+    profileImage.current.click()
+  }
 
   const changeProfileImage = event => {
-    const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg'];
-    const selected = event.target.files[0];
+    const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
+    const selected = event.target.files[0]
 
     if (selected && ALLOWED_TYPES.includes(selected.type)) {
-      let reader = new FileReader();
-      reader.onloadend = () => setUserProfile(reader.result);
-      return reader.readAsDataURL(selected);
+      let reader = new FileReader()
+      reader.onloadend = () => setUserProfile(reader.result)
+      return reader.readAsDataURL(selected)
     }
 
-    onOpen();
-  };
+    onOpen()
+  }
 
   return (
     <VStack spacing={3} py={5} borderBottomWidth={1} borderColor="brand.light">
@@ -97,7 +97,7 @@ function Profile() {
         </Text>
       </VStack>
     </VStack>
-  );
+  )
 }
 
-export default Profile;
+export default Profile

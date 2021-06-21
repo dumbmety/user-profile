@@ -10,7 +10,7 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
 function CompanySettings() {
   return (
@@ -60,7 +60,7 @@ function CompanySettings() {
         </NumberInput>
       </FormControl>
     </Grid>
-  );
+  )
 }
 
-export default CompanySettings;
+export default CompanySettings

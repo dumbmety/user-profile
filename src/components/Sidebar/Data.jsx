@@ -1,4 +1,4 @@
-import { Box, Text, VStack } from '@chakra-ui/react';
+import { Box, Text, VStack } from '@chakra-ui/react'
 
 const list = [
   {
@@ -19,7 +19,7 @@ const list = [
     value: 6,
     color: 'cadet',
   },
-];
+]
 
 function Data() {
   return (
@@ -44,7 +44,7 @@ function Data() {
         </Box>
       ))}
     </VStack>
-  );
+  )
 }
 
-export default Data;
+export default Data

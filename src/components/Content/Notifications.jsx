@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Switch } from '@chakra-ui/react';
+import { FormControl, FormLabel, Switch } from '@chakra-ui/react'
 
 function Notifications() {
   return (
@@ -17,7 +17,7 @@ function Notifications() {
       </FormLabel>
       <Switch id="notificationEmails" />
     </FormControl>
-  );
+  )
 }
 
-export default Notifications;
+export default Notifications
